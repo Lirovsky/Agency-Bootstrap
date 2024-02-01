@@ -1,0 +1,245 @@
+// Variáveis nativas aqui antes do import
+$primary:       #fff;
+$secondary:     #ffc800;
+$border-radius-lg:            .3rem;
+$navbar-toggler-padding-y:    .5rem;
+$navbar-toggler-padding-x:    1.25rem;
+$navbar-dark-color:           #fff;
+$navbar-dark-hover-color:     #ffc800;
+
+$card-border-color: none;
+$card-bg: #f8f9fa;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+%title {
+    font-size: 2rem;
+    letter-spacing: 3px;
+}
+%subtitle {
+    font-size: 1rem;
+}
+%font-s-1 {
+    font-size: 1.5rem;
+}
+%modal-f-1 {
+    font-size: 3rem;
+    line-height: 3rem;
+}
+%font-f-1 {
+    font-family: "Montserrat", Arial, sans-serif;
+}
+%font-f-2 {
+    font-family: "Roboto Slab", Arial, sans-serif;
+}
+%btnhover {
+    &:hover {
+        background-color: #d3a500;
+    }
+}
+%btnsocial {
+    height: 2.5rem;
+    width: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    }
+
+#section-1 {
+    @extend %font-f-1;
+    .navbar-toggler:hover {
+        color: #ffc800;
+    }
+    #mainNav.navbar-shrink {
+        background-color: #212529;
+        transition: all .5s;
+    }
+}
+
+#section-2 {
+    height: 100vh;
+    background-image: url("../img/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    h3 {
+        @extend %font-f-2
+    }
+    h2 {
+        font-size: 2.8rem;
+    }
+    @media (min-width: 576px) {
+        h2 {
+            font-size: 5rem;
+        }
+    }
+    .btn {
+        @extend %btnhover
+    }
+}
+
+#section-3, #section-4, #section-5, #section-6, #section-8 {
+    h2 {
+        @extend %title;
+    }
+    h3 {
+        @extend %subtitle;
+    }
+}
+
+#section-4 {
+    .portfolio-hover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 200, 0, 0.902);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity ease-in-out 0.25s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .portfolio-hover-content {
+        @extend %title;
+    }
+    .portfolio-caption {
+        h2 {
+            @extend %font-f-1;
+            @extend %font-s-1;
+        }
+    
+        h3 {
+            @extend %font-f-2
+        }
+    }
+}
+
+.portfolio-modal {
+    h2 {
+        @extend %modal-f-1;
+    }
+    .intro {
+        @extend %font-f-2 
+    }
+}
+
+#section-5 {
+    .timeline {
+        position: relative;
+        padding: 0;
+        list-style: none;
+        // risco
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 40px;
+            width: 2px;
+            margin-left: -1.5px;
+            background-color: #e9ecef;
+        }
+        @media (min-width: 768px) {
+            &:before {
+                left: 75px;
+            }
+        }
+        li {
+            position: relative;
+            min-height: 50px;
+            margin-bottom: 100px;
+
+            .timeline-panel {
+                padding: 0 20px 0 110px;
+                text-align: left;
+                h4 {
+                    @extend %font-s-1;
+                }
+            }
+            @media (min-width: 768px) {
+                .timeline-panel {
+                    padding: 0 20px 0 190px;
+                }
+            }
+            .timeline-image {
+                position: absolute;
+                left: 0;
+                width: 80px;
+                height: 80px;
+                border: 7px solid #e9ecef;
+                border-radius: 100%;
+                background-color: #ffc800;
+
+                .button {
+                    font-size: .8rem;
+                    padding-top: 10px;
+                }
+                @media (min-width: 768px) {
+                    .button {
+                        font-size: 1.5rem;
+                        padding-top: 25px;
+                    }
+                }
+            }
+            @media (min-width: 768px) {
+                .timeline-image {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+        }
+    }
+}
+
+#section-6 {
+    img {
+        border: 7px solid #cbcbcb;
+    }
+    .btn {
+        @extend %btnsocial;
+    }
+}
+
+#section-7 {
+    .img-brand {
+        height: 2.75rem;
+      }
+}
+
+#section-8 {
+    background-color: #212529;
+    background-image: url("../img/map-image.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    .form-group {
+        margin-bottom: 1.5rem;
+        .form-control:focus {
+            border-color: #ffc800;
+            box-shadow: none;
+        }
+    }
+    input, textarea {
+        padding: 1.25rem;
+    }
+    .form-group-textarea {
+        height: 100%;
+        textarea {
+            height: 100%;
+            min-height: 10rem;
+        }
+    }
+    .btn {
+        @extend %btnhover;
+    }
+}
+
+#footer {
+    @extend %font-f-1;
+    .btn {
+        @extend %btnsocial;
+    }
+}
